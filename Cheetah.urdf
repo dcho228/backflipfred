@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+
+<robot name="Cheetah">
+  <link name="Body">
+    <inertial>
+      <origin xyz="0 0 2" rpy="0 0 0" />
+      <mass value="5" />
+      <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="2" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 2" rpy="0 0 0" />
+      <geometry>
+         <box size="3.0 1 0.5" />
+      </geometry>
+      <material name="blue">
+	       <color rgba="0 0 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="3.0 1 0.5" />
+      </geometry>
+      <origin xyz="0 0 2" rpy="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="FR_upper_arm">
+    <inertial>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+      <material name="red">
+	       <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+	  <cylinder length="1.25" radius="0.1" />
+      </geometry>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+    </collision>
+  </link>
+
+  <link name="FR_lower_arm">
+    <inertial>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.33" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+      <material name="red">
+	       <color rgba="0 1 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="FR_shoulder" type="continuous">
+    <parent link="Body" />
+    <child link="FR_upper_arm" />
+    <origin xyz="1.15 -.6 2" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+  <joint name="FR_elbow" type="continuous">
+    <parent link="FR_upper_arm" />
+    <child link="FR_lower_arm" />
+    <origin xyz="0 -.175 -1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+
+  <link name="FL_upper_arm">
+    <inertial>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+      <material name="red">
+	       <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="FL_lower_arm">
+    <inertial>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.33" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+      <material name="green">
+	       <color rgba="0 1 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="FL_shoulder" type="continuous">
+    <parent link="Body" />
+    <child link="FL_upper_arm" />
+    <origin xyz="1.15 .6 2" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+  <joint name="FL_elbow" type="continuous">
+    <parent link="FL_upper_arm" />
+    <child link="FL_lower_arm" />
+    <origin xyz="0 .175 -1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+
+  <link name="RR_upper_arm">
+    <inertial>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+      <material name="red">
+	       <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RR_lower_arm">
+    <inertial>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.33" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+      <material name="green">
+	       <color rgba="0 1 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="RR_shoulder" type="continuous">
+    <parent link="Body" />
+    <child link="RR_upper_arm" />
+    <origin xyz="-1.15 -.6 2" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+  <joint name="RR_elbow" type="continuous">
+    <parent link="RR_upper_arm" />
+    <child link="RR_lower_arm" />
+    <origin xyz="0 -.175 -1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+
+ <link name="RL_upper_arm">
+    <inertial>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+      <material name="red">
+	       <color rgba="1 0 0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.475" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.25" radius="0.1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="RL_lower_arm">
+    <inertial>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="0.33" iyz="0" izz="1" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+      <material name="green">
+	       <color rgba="0 1 0.25 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 -.45" rpy="0 0 0" />
+      <geometry>
+         <cylinder length="1.1" radius=".075" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="RL_shoulder" type="continuous">
+    <parent link="Body" />
+    <child link="RL_upper_arm" />
+    <origin xyz="-1.15 .6 2" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+
+  <joint name="RL_elbow" type="continuous">
+    <parent link="RL_upper_arm" />
+    <child link="RL_lower_arm" />
+    <origin xyz="0 .175 -1" />
+    <axis xyz="0 1 0" />
+    <dynamics damping="0.3" />
+  </joint>
+</robot>
