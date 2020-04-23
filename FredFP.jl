@@ -43,7 +43,7 @@ RigidBodyDynamics.add_contact_point!(bodies(mechanism)[10],cp1)
 # set the robot state
 state= MeshCatMechanisms.MechanismState(mechanism)
 MeshCatMechanisms.zero_velocity!(state)
-MeshCatMechanisms.set_configuration!(state,[1;0;0;0;0;0;2.0;.5;.5;-.5;-.5;-1;-1;1;1])
+MeshCatMechanisms.set_configuration!(state,[1;0;0;0;0;0;2;.5;.5;-.5;-.5;-1;-1;1;1])
 
 # PD control on shoulders and joints
 function mytorque!(torques::AbstractVector, t, state::MechanismState)
