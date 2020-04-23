@@ -34,11 +34,6 @@
              <color rgba="1 1 1 1" />
          </material>
      </visual>
-     <inertial>
-         <origin xyz="0 0 0." rpy="0 0 0" />
-         <mass value="0.1" />
-         <inertia ixx="1" ixy="0" ixz="0" iyy="0.083" iyz="0" izz="1" />
-     </inertial>
      </link>    
      
      <joint name="base_to_camera" type="fixed">
@@ -93,7 +88,7 @@
     </collision>
   </link>
 
-  <joint name="FRhoulder" type="continuous">
+  <joint name="FRhoulder" type="revolute">
     <parent link="base_link" />
     <child link="FRUL" />
     <origin xyz="1.15 -.6 2" />
@@ -101,7 +96,7 @@
     <dynamics damping="0.3" />
   </joint>
 
-  <joint name="FRelbow" type="continuous">
+  <joint name="FRelbow" type="revolute">
     <parent link="FRUL" />
     <child link="FRLL" />
     <origin xyz="0 -.175 -0.9" />
@@ -156,7 +151,7 @@
     </collision>
   </link>
 
-  <joint name="FLshoulder" type="continuous">
+  <joint name="FLshoulder" type="revolute">
     <parent link="base_link" />
     <child link="FLUL" />
     <origin xyz="1.15 .6 2" />
@@ -164,7 +159,7 @@
     <dynamics damping="0.3" />
   </joint>
 
-  <joint name="FLelbow" type="continuous">
+  <joint name="FLelbow" type="revolute">
     <parent link="FLUL" />
     <child link="FLLL" />
     <origin xyz="0 .175 -0.9" />
@@ -219,7 +214,7 @@
     </collision>
   </link>
 
-  <joint name="RRshoulder" type="continuous">
+  <joint name="RRshoulder" type="revolute">
     <parent link="base_link" />
     <child link="RRUL" />
     <origin xyz="-1.15 -.6 2" />
@@ -227,7 +222,7 @@
     <dynamics damping="0.3" />
   </joint>
 
-  <joint name="RRelbow" type="continuous">
+  <joint name="RRelbow" type="revolute">
     <parent link="RRUL" />
     <child link="RRLL" />
     <origin xyz="0 -.175 -0.9" />
@@ -282,7 +277,7 @@
     </collision>
   </link>
 
-  <joint name="RLshoulder" type="continuous">
+  <joint name="RLshoulder" type="revolute">
     <parent link="base_link" />
     <child link="RLUL" />
     <origin xyz="-1.15 .6 2" />
@@ -290,7 +285,7 @@
     <dynamics damping="0.3" />
   </joint>
 
-  <joint name="RLelbow" type="continuous">
+  <joint name="RLelbow" type="revolute">
     <parent link="RLUL" />
     <child link="RLLL" />
     <origin xyz="0 .175 -0.9" />
