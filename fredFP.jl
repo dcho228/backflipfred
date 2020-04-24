@@ -5,7 +5,7 @@
 #pkg"precompile"
 
 using RigidBodyDynamics, MeshCat, MeshCatMechanisms
-using LinearAlgebra, Printf
+using LinearAlgebra, Printf, DelimitedFiles
 
 # load mechanism
 #urdfpath="deps/fred/fredFP.urdf"
