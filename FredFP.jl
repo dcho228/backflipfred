@@ -1,3 +1,5 @@
+# Attribution: University of Kentucky ME599/699 "Cheetah" Project jwt.jl
+
 #using Pkg
 #Pkg.activate(@__DIR__);
 
